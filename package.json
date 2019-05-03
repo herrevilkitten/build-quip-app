@@ -1,0 +1,30 @@
+{
+  "name": "build-quip-app",
+  "version": "1.0.0",
+  "description": "A utility to help build Quip Live Apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herrevilkitten/build-quip-app.git"
+  },
+  "keywords": [
+    "quip"
+  ],
+  "author": "Eric Kidder",
+  "license": "Apache-2.0",
+  "bin": {
+    "build-quip-app": "./build-quip-app.js"
+  },
+  "bugs": {
+    "url": "https://github.com/herrevilkitten/build-quip-app/issues"
+  },
+  "homepage": "https://github.com/herrevilkitten/build-quip-app#readme",
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "dotenv": "^7.0.0",
+    "semver": "^6.0.0"
+  }
+}
