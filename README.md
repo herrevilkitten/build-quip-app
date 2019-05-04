@@ -11,7 +11,7 @@ The `version` command makes it easy to update the version name in a Quip manifes
 build-quip-app version <version> <options>
 ```
 
-If the manifest's version name is already in semantic versioning format, then `<version>` can be of 
+If the manifest's version name is already in semantic versioning format, then `<version>` can be one of 
 ```
 major
 minor
@@ -44,25 +44,25 @@ build-quip-app build <options>
 ```
 
 ##### Version Numbers
- By default, `build-quip-app` will take the `version_number` from the manifest and increment it by 1.  This behavior can be controlled with command-line options and environment variables.  With the `--version-number` option and `QUIP_VERSION_NUMBER` environment variable, the value can be set directly. The `--no-increment` option can be used to suppress the auto-incrementing.
+By default, `build-quip-app` will take the `version_number` from the manifest and increment it by 1.  This behavior can be controlled with command-line options and environment variables.  With the `--version-number` option and `QUIP_VERSION_NUMBER` environment variable, the value can be set directly. The `--no-increment` option can be used to suppress the auto-incrementing.
 
- For example, if the `version_number` in the manifest is 1
+For example, if the `version_number` in the manifest is 1
 ```
 build-quip-app build
 ```
- will set it to 2.
+will set it to 2.
 ```
 build-quip-app build --no-increment
 ```
- will keep it at 1.
+will keep it at 1.
 ```
 build-quip-app build --version-number=10
 ```
- will set it to 10.
+will set it to 10.
 ```
 QUIP_VERSION_NUMBER=10 build-quip-app build
 ```
- will also set it to 10.
+will also set it to 10.
 
 ### Options
 Name|Description
