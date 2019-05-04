@@ -1,6 +1,10 @@
 # build-quip-app
 `build-quip-app` is a utility that makes it easier to  develop [Quip Live Apps](https://salesforce.quip.com/dev/liveapps/) by providing additional functionality and wrapping around the default build process.
 
+```
+npm install -g build-quip-app
+```
+
 Commands
 * [`build-quip-app version`](#build-quip-app-version) - Update the version name in a manifest
 * [`build-quip-app build`](#build-quip-app-build) - update the build number in a manifest and run the build command

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const path = require('path');
 const childProcess = require('child_process');
 const fs = require('fs');
 
@@ -23,9 +24,6 @@ switch (options.command) {
     break;
   case 'version':
     changeVersion(options._unknown);
-    break;
-  case 'vue':
-    configureForVue(options._unknown);
     break;
   default:
     console.error(`build-quip-app: unknown build command '${options.command}'`);
@@ -56,11 +54,11 @@ function buildQuip(args) {
       name: 'version-number', type: Number,
     },
     {
-      name: 'build-command', type: String, default: 'npm run build',
+      name: 'build-command', type: String, defaultValue: 'npm run build',
     }
   ];
   const options = commandLineArgs(definitions, { argv: args, stopAtFirstUnknown: true });
-  const manifest = require(options.manifest);
+  const manifest = require(path.join(process.cwd(), options.manifest));
   manifest.id = process.env.QUIP_APP_ID || options['app-id'] || manifest.id;
   manifest.version_name = process.env.QUIP_VERSION_NAME || options['version-name'] || manifest.version_name;
   if (!options['no-increment']) {
@@ -88,7 +86,7 @@ function changeVersion(args) {
     },
   ];
   const options = commandLineArgs(definitions, { argv: args, stopAtFirstUnknown: true });
-  const manifest = require(options.manifest);
+  const manifest = require(path.join(process.cwd(), options.manifest));
   const versionName = manifest.version_name;
   const increment = (options['version-name'] || '').toLowerCase().trim();
   if (!increment) {
@@ -115,6 +113,3 @@ function changeVersion(args) {
   fs.writeFileSync(options.output || options.manifest, JSON.stringify(manifest, null, 4));
 }
 
-function configureForVue() {
-
-}
