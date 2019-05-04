@@ -5,7 +5,7 @@
 npm install -g build-quip-app
 ```
 ```
-npm install -g https://github.com/herrevilkitten/build-quip-app
+npm install -g https://github.com/herrevilkitten/build-quip-app.git
 ```
 
 Commands
