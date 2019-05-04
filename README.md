@@ -33,7 +33,7 @@ Name|Description
 `QUIP_VERSION_NAME`|Can be used instead of supplying the version name on the command line.
 
 ### Building a Live App
-The `build` command is used to build the Live App.  It does modifying the manifest file and then running a defined build command (default: `npm run build`).  The most important modification that it makes to the manifest is updating the `version_number`.  It also supports modifying the live app's `id` and its `version_name`.  Note that version name changes are better handled with the [version](#Updating the Version Name) command.
+The `build` command is used to build the Live App.  It does modifying the manifest file and then running a defined build command (default: `npm run build`).  The most important modification that it makes to the manifest is updating the `version_number`.  It also supports modifying the live app's `id` and its `version_name`.  Note that version name changes are better handled with the [version](#Updating-the-Version-Name) command.
 
 ```
 build-quip-app build <options>
