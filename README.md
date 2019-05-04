@@ -4,11 +4,15 @@
 ```
 npm install -g build-quip-app
 ```
+```
+npm install -g https://github.com/herrevilkitten/build-quip-app
+```
 
 Commands
 * [`build-quip-app version`](#build-quip-app-version) - Update the version name in a manifest
 * [`build-quip-app build`](#build-quip-app-build) - update the build number in a manifest and run the build command
 
+---
 ## `build-quip-app version`
 The `version` command makes it easy to update the version name in a Quip manifest.  The command can use [semantic versioning](https://semver.org/) with the [semver](https://www.npmjs.com/package/semver) module or a custom version can be supplied.
 ```
@@ -25,9 +29,14 @@ preminor
 prepatch
 prerelease
 ```
-to automatically update the version name appropriately.  For example, if the version name is `1.2.3` and the given version is `minor`, the new version name will be `1.3.0`.
+to automatically update the version name appropriately.  For example, if the version name is `1.2.3` and the given version is `minor`, the new version name will be `1.3.0`.  If one of these entries is used and the manifest version name is NOT in semver format, an error will be displayed.
 
-If the manifest's versiona name is NOT in semantic versioning format, it will be set to whatever is given in `<version>`.  This may cause confusion if a semantic versioning name is used and the manifest is not configured appropriately.  In this case, a warning will be printed to the console for clarification.
+If anything else is used for the `<version>`, then the manifest version name will be set to that with no validation.  For example, if the command is
+
+```
+build-quip-app version first-release
+```
+then `version_name` will be set to "`first-release`".
 
 ### Options
 Name|Description
