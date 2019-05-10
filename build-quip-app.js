@@ -36,7 +36,7 @@ function buildQuip(args) {
       name: 'manifest', alias: 'm', defaultValue: './app/manifest.json'
     },
     {
-      name: 'output', alias: 'o', defaultValue: './app/manifest.json'
+      name: 'output', alias: 'o'
     },
     {
       name: 'no-increment', type: Boolean,
@@ -67,7 +67,7 @@ function buildQuip(args) {
   }
   fs.writeFileSync(options.output || options.manifest, JSON.stringify(manifest, null, 4));
   if (!options['no-build']) {
-    childProcess.execSync(options['build-command']);
+    childProcess.execSync(options['build-command'], { stdio: 'inherit' });
   }
 }
 
@@ -79,7 +79,7 @@ function changeVersion(args) {
       name: 'manifest', alias: 'm', defaultValue: './app/manifest.json'
     },
     {
-      name: 'output', alias: 'o', defaultValue: './app/manifest.json'
+      name: 'output', alias: 'o'
     },
     {
       name: 'version-name', type: String, defaultOption: true

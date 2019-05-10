@@ -42,7 +42,7 @@ then `version_name` will be set to "`first-release`".
 Name|Description
 ------|-----------
 `--manifest`|location of the manifest file to read from (default: `./app/manifest.json`)
-`--output`|location of the manifest file to write to (default: `./app/manifest.json`)
+`--output`|location of the manifest file to write to (defaults to the manifest file)
 
 ### Environment Variables
 Name|Description
@@ -81,7 +81,7 @@ will also set it to 10.
 Name|Description
 ------|-----------
 `--manifest`|location of the manifest file to read from (default: `./app/manifest.json`)
-`--output`|location of the manifest file to write to (default: `./app/manifest.json`)
+`--output`|location of the manifest file to write to (defaults to the manifest file)
 `--no-increment`|Do not increment the version number during the build
 `--no-build`|Do not run the build command
 `--app-id`|Set the `id` in the manifest to the given value
